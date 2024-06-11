@@ -54,7 +54,7 @@ pipeline {
             steps{
                 script {
                     
-                    sh "ssh  ubuntu@3.104.153.184 /home/ubuntu/login-ecr.sh"
+                    sh "ssh  ubuntu@3.104.153.184 /home/ubuntu/login_ecr.sh"
                     sh "ssh  ubuntu@3.104.153.184 sudo docker rm -f ${IMAGE_REPO_NAME}-${BRANCH_NAME} || true"
                     sh "ssh  ubuntu@3.104.153.184 sudo docker rm -f ${IMAGE_REPO_NAME}-${BRANCH_NAME}-B || true"
                     sh "ssh  ubuntu@3.104.153.184 sudo docker images -a -q | xargs docker rmi -f || true"
